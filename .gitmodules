@@ -1,0 +1,3 @@
+[submodule "src/github.com/st3v/uaa-authcode-proxy"]
+	path = src/github.com/st3v/uaa-authcode-proxy
+	url = https://github.com/st3v/uaa-authcode-proxy.git
