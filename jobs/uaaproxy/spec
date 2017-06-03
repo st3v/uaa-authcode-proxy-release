@@ -1,0 +1,93 @@
+---
+name: uaaproxy
+
+templates:
+  ctl.erb: bin/ctl
+  uaa_ca_cert.erb: config/uaa_ca_cert
+
+packages:
+- uaaproxy
+
+properties:
+  uaaproxy.listen_address:
+    description: Listen address
+    default: ":80"
+
+  uaaproxy.backend_address:
+    description: Backend address
+
+  uaaproxy.uaa.url:
+    description: UAA public URL
+
+  uaaproxy.uaa.internal_url:
+    description: UAA internal URL, if not specified the public UAA URL is being used
+    default: ""
+
+  uaaproxy.uaa.ca_cert:
+    description: UAA CA cert
+
+  uaaproxy.uaa.skip_tls_verify:
+    description: Skip TLS verification when sending requests to UAA
+    default: false
+
+  uaaproxy.uaa.proxy_client.name:
+    description: UAA client name for proxy
+    default: ""
+
+  uaaproxy.uaa.proxy_client.id:
+    description: UAA client ID for proxy
+    default: ""
+
+  uaaproxy.uaa.proxy_client.secret:
+    description: UAA client secret for proxy
+    default: ""
+
+  uaaproxy.uaa.proxy_client.redirect_url:
+    description: |
+      URL to redirect user to after authentication,
+      Oauth2 callback handler will be registered under the corresponding path,
+      UAA client for proxy has to be re-created whenever this changes
+
+  uaaproxy.uaa.register_proxy_client:
+    description: Whether or not to create UAA client for proxy
+    default: false
+
+  uaaproxy.uaa.admin_client.id:
+    description: UAA Admin client ID, used to create proxy client
+    default: ""
+
+  uaaproxy.uaa.admin_client.secret:
+    description: UAA Admin client secret, used to create proxy client
+    default: ""
+
+  uaaproxy.uaa.required_scopes:
+    description: Oauth scopes required from authenticated user
+    default: []
+
+  uaaproxy.uaa.token_ttl:
+    description: |
+      Duration after which oauth2 access token expires,
+      UAA client for proxy has to be re-created whenever this changes
+    default: 2m
+
+  uaaproxy.session.auth_key:
+    description: Key used to authenticate session cookies using HMAC, randomly generated if not specified
+    default: ""
+
+  uaaproxy.session.encrypt_key:
+    description: Key used to encrypt session cookies, randomly generated if less than 16 bytes
+    default: ""
+
+  uaaproxy.redirect.port:
+    description: |
+      If a request has X-Forwarded-Port header set, it must equal the port
+      specified here, otherwise the request get redirected to the required port
+
+  uaaproxy.redirect.protocol:
+    description: |
+      If a request has X-Forwarded-Proto header set, it must equal the protocol
+      specified here, otherwise the request gets redirected to the required protocol
+
+  uaaproxy.proxy_websockets:
+    description: Proxy websocket requests
+    default: true
