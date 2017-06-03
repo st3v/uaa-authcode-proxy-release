@@ -1,0 +1,7 @@
+---
+name: uaaproxy-go
+
+dependencies: []
+
+files:
+- go/go1.8.3.linux-amd64.tar.gz
