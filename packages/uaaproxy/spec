@@ -1,0 +1,8 @@
+---
+name: uaaproxy
+
+dependencies:
+- uaaproxy-go
+
+files:
+- github.com/st3v/uaa-proxy/**/*.go
