@@ -1,0 +1,26 @@
+---
+packages:
+- name: uaaproxy
+  version: fc1933c2a2ef3763afea5563f2c4e8e02645a64e
+  fingerprint: fc1933c2a2ef3763afea5563f2c4e8e02645a64e
+  sha1: 6b158d3f3247e3fd910d8dc4dd01dbc8bcb59d49
+  dependencies:
+  - uaaproxy-go
+- name: uaaproxy-go
+  version: a4442fc4c1944408f9efbbffe8e34c76fa86796c
+  fingerprint: a4442fc4c1944408f9efbbffe8e34c76fa86796c
+  sha1: c8bc16c417a70f0d338af78159268e327eff0d92
+  dependencies: []
+jobs:
+- name: uaaproxy
+  version: fe58bb3264d3a0df3a5b20c3d41c68734d22c429
+  fingerprint: fe58bb3264d3a0df3a5b20c3d41c68734d22c429
+  sha1: 0c891ac13923bf082ebe61f8dbbfa3661aa5d7bd
+license:
+  version: e6c4ccc65c76e75e2338d1edabdcf264d37ee663
+  fingerprint: e6c4ccc65c76e75e2338d1edabdcf264d37ee663
+  sha1: 0632315fbd09cbdad4848831d8448f6c5258a1dc
+commit_hash: 3e6a39d7
+uncommitted_changes: true
+name: uaa-proxy
+version: 0.0.1
