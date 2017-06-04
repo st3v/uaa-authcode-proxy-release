@@ -26,22 +26,22 @@ case $1 in
     export UAA_SKIP_TLS_VALIDATION=<%= skip %>
     <% end %>
 
-    export UAA_REQUIRED_SCOPES=<%= p('uaaproxy.uaa.required_scopes').join(',') %>
-    export UAA_TOKEN_TTL=<%=  p('uaaproxy.uaa.token_ttl') %>
+    export UAA_REQUIRED_SCOPES="<%= p('uaaproxy.uaa.required_scopes').join(',') %>"
+    export UAA_TOKEN_TTL="<%=  p('uaaproxy.uaa.token_ttl') %>"
 
-    export UAA_PROXY_CLIENT_NAME=<%= p('uaaproxy.uaa.proxy_client.name') %>
-    export UAA_PROXY_CLIENT_ID=<%= p('uaaproxy.uaa.proxy_client.id') %>
-    export UAA_PROXY_CLIENT_SECRET=<%= p('uaaproxy.uaa.proxy_client.secret') %>
-    export UAA_PROXY_CLIENT_REDIRECT_URL=<%= p('uaaproxy.uaa.proxy_client.redirect_url') %>
+    export UAA_PROXY_CLIENT_NAME="<%= p('uaaproxy.uaa.proxy_client.name') %>"
+    export UAA_PROXY_CLIENT_ID="<%= p('uaaproxy.uaa.proxy_client.id') %>"
+    export UAA_PROXY_CLIENT_SECRET="<%= p('uaaproxy.uaa.proxy_client.secret') %>"
+    export UAA_PROXY_CLIENT_REDIRECT_URL="<%= p('uaaproxy.uaa.proxy_client.redirect_url') %>"
 
     <% if_p('uaaproxy.uaa.register_proxy_client') do |register| %>
     export UAA_REGISTER_PROXY_CLIENT=<%= register %>
     <% end %>
-    export UAA_ADMIN_CLIENT_ID=<%= p('uaaproxy.uaa.admin_client.id') %>
-    export UAA_ADMIN_CLIENT_SECRET=<%= p('uaaproxy.uaa.admin_client.secret') %>
+    export UAA_ADMIN_CLIENT_ID="<%= p('uaaproxy.uaa.admin_client.id') %>"
+    export UAA_ADMIN_CLIENT_SECRET="<%= p('uaaproxy.uaa.admin_client.secret') %>"
 
-    export SESSION_AUTH_KEY=<%= p('uaaproxy.session.auth_key') %>
-    export SESSION_ENCRYPT_KEY=<%= p('uaaproxy.session.encrypt_key') %>
+    export SESSION_AUTH_KEY="<%= p('uaaproxy.session.auth_key') %>"
+    export SESSION_ENCRYPT_KEY="<%= p('uaaproxy.session.encrypt_key') %>"
 
     <% if_p('uaaproxy.redirect.port') do |port| %>
     export REDIRECT_PORT=<%= port %>
